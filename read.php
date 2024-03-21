@@ -51,13 +51,19 @@ form {
 .bvii  { color: rgba(245, 66, 12, 0.733) }
 .biii  { color: rgba(245, 66, 12, 0.733) }
 .vmin  { color: rgba(245, 66, 12, 0.733) }
-.ivmin  { color: rgba(245, 66, 12, 0.733) }
+.vimin  { color: rgba(245, 66, 12, 0.733) }
+
+
+#code {
+  font-size: 105%;
+  line-height: 160%;
+}
 
 </style>
 
 </head>
 
-<body>
+<body onload="margen()">
 
 <div class="container">
 
@@ -69,6 +75,7 @@ form {
 <code id="code">
 
 <?php
+
   include 'db.php';
   $sql = "select * from tabla1 WHERE id=(SELECT MAX(id) FROM `tabla1`);";
   $result = $conn->query($sql);
@@ -90,6 +97,8 @@ form {
 
 
 </body>
+
+
 <script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
 <script>
 var highlight = window.csHighlight;
@@ -98,7 +107,7 @@ var highlight = window.csHighlight;
 
 <script>
 
-let opcion = "F";
+let opcion = "G";
 
 if (opcion ===  "A") {
 
@@ -347,7 +356,7 @@ patterns: [
       match: /^(A#\s)/
   },
 
-    {
+{
       name: 'bvi',
       match: /^(G#\s)/
     },
@@ -360,6 +369,11 @@ patterns: [
     {
       name: 'biii',
       match: /^(D#\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(Eb\s)/
     }
 ]
 })}
@@ -410,7 +424,17 @@ patterns: [
 
   {
     name: 'vdevi',
+    match: /^(Gb7\s)/
+  },
+
+  {
+    name: 'vdevi',
     match: /^(F#\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Gb\s)/
   },
 
   {
@@ -421,6 +445,11 @@ patterns: [
     {
       name: 'bvi',
       match: /^(Bb\s)/
+    },
+
+    {
+      name: 'bvi',
+      match: /^(A#\s)/
     },
 
     {
@@ -457,7 +486,17 @@ patterns: [
 
   {
     name: 'vdev',
+    match: /^(Gb7)/
+  },
+
+  {
+    name: 'vdev',
     match: /^(F#\s)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(Gb)/
   },
 
   {
@@ -467,7 +506,17 @@ patterns: [
 
   {
     name: 'vdeii',
+    match: /^(Db7\s)/
+  },
+
+  {
+    name: 'vdeii',
     match: /^(C#\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(Db\s)/
   },
 
   {
@@ -477,7 +526,12 @@ patterns: [
 
   {
     name: 'vdevi',
-    match: /^(G#\s)/
+    match: /^(Ab7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Ab\s)/
   },
 
   {
@@ -511,6 +565,12 @@ patterns: [
       name: 'vimin',
       match: /^(Bbm\s)/
     },
+
+    {
+      name: 'vimin',
+      match: /^(A#m\s)/
+    },
+
   {
     name: 'vdeiv',
     match: /^(F7)/
@@ -551,14 +611,29 @@ patterns: [
       match: /^(Eb\s)/
   },
 
+  {
+      name: 'bvii',
+      match: /^(D#\s)/
+  },
+
     {
       name: 'bvi',
       match: /^(C#\s)/
     },
 
     {
+      name: 'bvi',
+      match: /^(Db\s)/
+    },
+
+    {
       name: 'biii',
       match: /^(G#\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(Ab\s)/
     }
 ]
 })}
@@ -616,18 +691,16 @@ patterns: [
     {
       name: 'biii',
       match: /^(Bb\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(A#\s)/
     }
 ]
 })}
 
-
-
-
-  function llenar() {
-              var texto = document.getElementById("textarea").value;
-              document.getElementById("code").innerHTML = texto;
-              }
-  </script>
+</script>
 
 
 </html>

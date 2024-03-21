@@ -11,10 +11,6 @@ header('Content-Type: text/html; charset=utf-8');
 ?>
 
 <style>
-.vdevi { color: #cc33ff}
-.bvi  { color: red }
-.bvii  { color: red }
-
 
 pre {
   background-color: #232f1e;
@@ -67,6 +63,8 @@ form {
 
 
 </body>
+
+
 
 </html>
 
