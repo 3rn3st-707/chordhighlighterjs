@@ -4,66 +4,68 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Funciones Armonicas</title>
 
+    
 <?php
 header('Content-Type: text/html; charset=utf-8');
 ?>
 
-<style>
-
-pre {
-  background-color: #232f1e;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  border: solid;
-  border-width: 3px;
-  border-color: aqua;
-  color: antiquewhite;
-  padding: 1.3em  ;
-}
-
-textarea {
-  background-color: #232f1e;
-  border: solid;
-  border-width: 3px;
-  border-color: aqua;
-  color: antiquewhite;
-  padding: 1.3em;
-  width: 60%;
-}
-
-form {
-  width: 100%;
-  margin-left: 17%;
-  margin-right: auto;
-}
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
 
 </head>
 
 <body>
 
+
+
 <div class="container">
 
-  <h1>PHP + MySQL CRUD Demo</h1>
-  <p>Create, read, update, and delete records below</p>
-  
-  <form class="form-inline m-2" action="create.php" method="POST">
-    
-    <textarea id="texto" name="texto" rows="30" cols="50"></textarea>
+<h1>Marcador de Funciones Armonicas para Tablaturas</h1>
 
-    <button type="submit" class="btn btn-primary">Add</button>
+<br />
+  
+<form class="formulario" id="formulario" action="create.php" method="POST">
+
+<p class="pradio">
+<label for="C"><input type="radio" name="clave" class="clave" value="C" id="C"> Clave de Do (C)</label> 
+<label for="D"><input type="radio" name="clave" class="clave" value="D" id="D"> Clave de Re (D)</label> 
+<label for="E"><input type="radio" name="clave" class="clave" value="E" id="E"> Clave de Mi (E)</label> 
+<label for="F"><input type="radio" name="clave" class="clave" value="F" id="F"> Clave de Fa (F)</label> 
+</p>
+
+<p class="pradio">
+<label for="G"><input type="radio" name="clave" class="clave" value="G" id="G"> Clave de Sol (G)</label> 
+<label for="A"><input type="radio" name="clave" class="clave" value="A" id="A"> Clave de La (A)</label> 
+<label for="B"><input type="radio" name="clave" class="clave" value="B" id="B"> Clave de Si (B)</label> 
+</p>
+<br />
+<center><button type="submit" onclick="displayValue()" id="boton">Convertir</button></center>
+<br />
+    <div id="textareaWrap">
+    <textarea id="texto" name="texto" rows="30" cols="50"></textarea>
+    </div>  
+  
   </form>
 
 </div>
 
 
 </body>
+<script type="text/javascript">
 
+function displayValue() {
+
+
+            var ele = document.getElementsByName('clave');
+ 
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked)
+                sessionStorage.setItem("valorRadioBtn", ele[i].value);
+            }
+        }
+
+</script>
 
 
 </html>

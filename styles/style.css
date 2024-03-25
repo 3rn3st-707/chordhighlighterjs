@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+body {
+    background-color: #252b31;
+}
+
+h1 {
+  color: #f1a50e;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.pradio {
+  text-align: center;
+}
+
+pre {
+    background-color: #232f1e;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid;
+    border-width: 1px;
+    border-color: aqua;
+    color: antiquewhite;
+    padding: 1.3em  ;
+  }
+  
+  textarea {
+    background-color: #232f1e;
+    border: solid;
+    border-width: 3px;
+    border-color: aqua;
+    color: antiquewhite;
+    padding: 1.3em;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #textareaWrap {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+  }
+
+
+  
+  form {
+    width: 100%;
+
+  }
+  
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: ubuntu;
+  }
+  
+  
+  .vdev  { color: #cc33ff}
+  .vdevi { color: #cc33ff}
+  .vdeiv { color: #cc33ff}
+  .vdeii { color: #cc33ff}
+  .bvi  { color: rgba(245, 66, 12, 0.733) }
+  .bvii  { color: rgba(245, 66, 12, 0.733) }
+  .biii  { color: rgba(245, 66, 12, 0.733) }
+  .vmin  { color: rgba(245, 66, 12, 0.733) }
+  .vimin  { color: rgba(245, 66, 12, 0.733) }
+  
+  
+  #code {
+    font-size: 105%;
+    line-height: 160%;
+  }
+
+  label {
+    background-color: #232f1e;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0, 255, 255, 0.699);
+    color: antiquewhite;
+    padding: 5px;
+    border-radius: 6%;
+  }
