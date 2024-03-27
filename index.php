@@ -28,7 +28,7 @@ header('Content-Type: text/html; charset=utf-8');
 <form class="formulario" id="formulario" action="create.php" method="POST">
 
 <p class="pradio">
-<label for="C"><input type="radio" name="clave" class="clave" value="C" id="C"> Clave de Do (C)</label> 
+<label for="C"><input type="radio" name="clave" class="clave" value="C" id="C" required> Clave de Do (C)</label> 
 <label for="D"><input type="radio" name="clave" class="clave" value="D" id="D"> Clave de Re (D)</label> 
 <label for="E"><input type="radio" name="clave" class="clave" value="E" id="E"> Clave de Mi (E)</label> 
 <label for="F"><input type="radio" name="clave" class="clave" value="F" id="F"> Clave de Fa (F)</label> 
@@ -40,7 +40,8 @@ header('Content-Type: text/html; charset=utf-8');
 <label for="B"><input type="radio" name="clave" class="clave" value="B" id="B"> Clave de Si (B)</label> 
 </p>
 <br />
-<center><button type="submit" onclick="displayValue()" id="boton">Convertir</button></center>
+
+<center><button type="submit" onclick="radioValue()" id="botonPosta" >Convertir</button></center>
 <br />
     <div id="textareaWrap">
     <textarea id="texto" name="texto" rows="30" cols="50"></textarea>
@@ -52,18 +53,20 @@ header('Content-Type: text/html; charset=utf-8');
 
 
 </body>
+
 <script type="text/javascript">
 
-function displayValue() {
+function radioValue() {
 
+        var ele = document.getElementsByName('clave');
 
-            var ele = document.getElementsByName('clave');
- 
-            for (i = 0; i < ele.length; i++) {
-                if (ele[i].checked)
-                sessionStorage.setItem("valorRadioBtn", ele[i].value);
+        for (i = 0; i < ele.length; i++) {
+            if (ele[i].checked) {
+               sessionStorage.setItem("valorRadioBtn", ele[i].value);
             }
         }
+
+}
 
 </script>
 

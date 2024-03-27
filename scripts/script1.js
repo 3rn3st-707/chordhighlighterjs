@@ -1,20 +1,41 @@
-var div = document.getElementById('code');
-
-var lines = div.innerHTML.split(/\r?\n/)    ;
-
-var newContent = lines.map(function(line) {
-    return '&nbsp; ' + line;
-}).join('<br>');
-
-div.innerHTML = newContent;
-
-
-//---------------------------------------
-
 
 var opcion = sessionStorage.getItem("valorRadioBtn");
 
 if (opcion ===  "A") {
+
+  document.getElementById('claveA').classList.remove('hide');
+
+} else if (opcion ===  "B") {
+
+  document.getElementById('claveB').classList.remove('hide');
+
+} else if (opcion ===  "C") {
+
+  document.getElementById('claveC').classList.remove('hide');
+
+} else if (opcion ===  "D") {
+
+  document.getElementById('claveD').classList.remove('hide');
+
+} else if (opcion ===  "E") {
+
+  document.getElementById('claveE').classList.remove('hide');
+
+} else if (opcion ===  "F") {
+
+  document.getElementById('claveF').classList.remove('hide');
+
+} else if (opcion ===  "G") {
+
+  document.getElementById('claveG').classList.remove('hide');
+
+}
+//---------------------------------------
+
+
+
+if (opcion ===  "A") {
+
 
   highlight({
   patterns: [
@@ -101,6 +122,7 @@ if (opcion ===  "A") {
 })}
 
 else if (opcion ===  "B") {
+
 
 highlight({
 
@@ -204,6 +226,7 @@ patterns: [
 
 else if (opcion ===  "C") {
 
+
 highlight({
 
 patterns: [
@@ -284,6 +307,7 @@ patterns: [
 })}
 
 else if (opcion ===  "D") {
+
 
 highlight({
 
@@ -366,6 +390,7 @@ patterns: [
 
 
 else if (opcion ===  "E") {
+
 
 highlight({
 
@@ -615,5 +640,13 @@ patterns: [
     }
 ]
 })}
+
+
+
+
+
+
+
+
 
 
