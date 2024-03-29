@@ -4,31 +4,44 @@ var opcion = sessionStorage.getItem("valorRadioBtn");
 if (opcion ===  "A") {
 
   document.getElementById('claveA').classList.remove('hide');
+  document.getElementById('claveANon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "La (A)";
 
 } else if (opcion ===  "B") {
 
   document.getElementById('claveB').classList.remove('hide');
+  document.getElementById('claveBNon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Si (B)";
 
 } else if (opcion ===  "C") {
 
   document.getElementById('claveC').classList.remove('hide');
+  document.getElementById('claveCNon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Do (C)";
 
 } else if (opcion ===  "D") {
 
   document.getElementById('claveD').classList.remove('hide');
+  document.getElementById('claveDNon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Re (D)";
 
 } else if (opcion ===  "E") {
 
   document.getElementById('claveE').classList.remove('hide');
+  document.getElementById('claveENon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Mi (E)";
 
 } else if (opcion ===  "F") {
 
   document.getElementById('claveF').classList.remove('hide');
+  document.getElementById('claveFNon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Fa (F)";
 
 } else if (opcion ===  "G") {
 
   document.getElementById('claveG').classList.remove('hide');
-
+  document.getElementById('claveGNon').classList.remove('hide');
+  document.getElementById('claveH1').innerText = "Sol (G)";
 }
 //---------------------------------------
 
@@ -122,7 +135,6 @@ if (opcion ===  "A") {
 })}
 
 else if (opcion ===  "B") {
-
 
 highlight({
 
@@ -588,6 +600,11 @@ patterns: [
     name: 'vimin',
     match: /^(Cm\s)/
   },
+
+  {
+    name: 'vdeiv',
+    match: /^(G7)/
+  }, 
 
   {
     name: 'vdev',
