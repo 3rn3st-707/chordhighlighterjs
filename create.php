@@ -5,5 +5,5 @@
   $sql = "insert into tabla1 (texto) values ('$texto')";
   $conn->query($sql);
   $conn->close();
-  header("location: read.php");
+  header("location: tab.php");
 ?>
