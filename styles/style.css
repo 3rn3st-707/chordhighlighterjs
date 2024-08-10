@@ -34,27 +34,40 @@ a .linkx:hover {
 }
 
 pre {
-    background-color: #232f1e;
+  background-color: #252c31;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     border: solid;
     border-width: 1px;
-    border-color: aqua;
+    border-color: rgb(41, 92, 92);
     color: antiquewhite;
-    padding: 1.3em  ;
+    padding: 1.3em;
   }
 
   #code1 {
     font-size: 105%;
     line-height: 160%;
+    border-bottom: none;
+  }
+
+  #code2 {
+    color: antiquewhite;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+  }
+
+  pre#code2 {
+    border: none;
+    background-color: inherit;
   }
   
   textarea {
-    background-color: #232f1e;
+    background-color: #252e31;
     border: solid;
-    border-width: 3px;
-    border-color: aqua;
+    border-width: 1px;
+    border-color: rgb(41, 92, 92);
     color: antiquewhite;
     padding: 1.3em;
     width: 100%;
@@ -73,18 +86,6 @@ pre {
     text-align: justify;
 }
 
-
-  .xx {
-    background-color: #232f1e;
-    border: solid;
-    border-width: 1px;
-    border-color: aqua;
-    color: antiquewhite;
-    padding: 1.3em;
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
-  }
 
 .textoInst {
     color: antiquewhite;
@@ -138,11 +139,11 @@ display: none ;
 
 
   label {
-    background-color: #232f1e;
+    background-color: #252e31;
     border: solid;
     border-width: 1px;
-    border-color: rgba(0, 255, 255, 0.699);
+    border-color: rgb(41, 92, 92);
     color: antiquewhite;
     padding: 5px;
-    border-radius: 6%;
+    border-radius: 1%;
   }

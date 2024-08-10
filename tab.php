@@ -27,15 +27,13 @@ header('Content-Type: text/html; charset=utf-8');
 <a href="/highlightphp" style="color: #76edf5d2;" class="linkx">convertir otra tablatura</a>
 </center>
 
-<pre>
-<code id="code1">
-<span id="claveC" class="hide">&nbsp; I       ii      iii IV      V       vi     VII   I
-C  /   /Dm /   /Em /F  /   /G  /   /Am /   /Bº / C</span><span id="claveD" class="hide">&nbsp; I       ii      iii IV      V       vi      VII I
-D  /   /Em /   /F#m/G  /   /A  /   /Bm /   /C#º/D</span><span id="claveE" class="hide">&nbsp; I       ii      iii IV      V       vi     VII  I
-E  /   /F#m/   /G#m/A  /   /B  /   /C#m/   /D#º/E</span><span id="claveF" class="hide">&nbsp; I       ii      iii IV      V       vi      VII  I
-F  /   /Gm /   /Am /Bb /   /C  /   /Dm /   /Eº / F</span><span id="claveG" class="hide">&nbsp; I       ii      iii IV      V       vi      VII  I
-G  /   /Am /   /Bm /C  /   /D  /   /Em /   /F#º/ G</span><span id="claveA" class="hide">&nbsp; I       ii      iii IV      V       vi      VII  I
-A  /   /Bm /   /C#m/D  /   /E  /   /F#m/   /G#º/ A</span><span id="claveB" class="hide">&nbsp; I       ii      iii IV      V       vi     VII  I
+<pre><code id="code1"><span id="claveC" class="hide">I       ii      iii IV      V       vi     VII   I
+C  /   /Dm /   /Em /F  /   /G  /   /Am /   /Bº / C</span><span id="claveD" class="hide">I       ii      iii IV      V       vi      VII I
+D  /   /Em /   /F#m/G  /   /A  /   /Bm /   /C#º/D</span><span id="claveE" class="hide">I       ii      iii IV      V       vi     VII  I
+E  /   /F#m/   /G#m/A  /   /B  /   /C#m/   /D#º/E</span><span id="claveF" class="hide">I       ii      iii IV      V       vi      VII  I
+F  /   /Gm /   /Am /Bb /   /C  /   /Dm /   /Eº / F</span><span id="claveG" class="hide">I       ii      iii IV      V       vi      VII  I
+G  /   /Am /   /Bm /C  /   /D  /   /Em /   /F#º/ G</span><span id="claveA" class="hide">I       ii      iii IV      V       vi      VII  I
+A  /   /Bm /   /C#m/D  /   /E  /   /F#m/   /G#º/ A</span><span id="claveB" class="hide">I       ii      iii IV      V       vi     VII  I
 B  /   /C#m/   /D#m/E  /   /F# /   /G#m/   /A#º/B</span>
 
 <?php
@@ -44,9 +42,9 @@ $sql = "select * from tabla1 WHERE id=(SELECT MAX(id) FROM `tabla1`);";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 echo $row['texto'];?>
-</pre></code>
+</code></pre>
 
-<pre class="xx"><span id="claveCNon" class="hide">Acordes no-diatonicos para la clave de Do (C):
+<pre id="code2"><span id="claveCNon" class="hide">Acordes no-diatonicos para la clave de Do (C):
 
 <span class="rojo">Bb</span> o <span class="rojo">A#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
 <span class="rojo">G#</span> o <span class="rojo">Ab</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
@@ -188,24 +186,27 @@ concepto de <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#amb
 
 </body>
 
-
 <script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
+
 <script>
 var highlight = window.csHighlight;
 </script>
 
+
 <script>
-var lines = code.innerHTML.split(/\r?\n/);
+code1 = document.getElementById("code1");
+
+var lines = code1.innerHTML.split(/\r?\n/);
 
 var newContent = lines.map(function(line) {
     return '&nbsp; ' + line;
 }).join('<br>');
 
-code.innerHTML = newContent;
+code1.innerHTML = newContent;
 </script>
 
-<script type="text/javascript" src="scripts/script1.js"></script>
 
+<script type="text/javascript" src="scripts/script1.js"></script>
 
 
 
