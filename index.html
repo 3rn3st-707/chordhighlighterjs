@@ -101,7 +101,7 @@ concepto de <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#amb
 
 function radioValue() {
 
-        var ele = document.getElementsByName('clave');
+        let ele = document.getElementsByName('clave');
 
         for (i = 0; i < ele.length; i++) {
             if (ele[i].checked) {
@@ -116,6 +116,18 @@ function enviar() {
     localStorage.setItem("itemTextArea", textoVal);
     radioValue();
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Assuming all radio buttons share the same name attribute
+    const radioButtons = document.getElementsByName('clave');
+
+    for(let radioButton of radioButtons) {
+        radioButton.addEventListener('click', function() {
+            document.querySelector('#botonPosta').click();
+        });
+    }
+});
 
 </script>
 
