@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 body {
     background-color: #252b31;
+}
+
+.navbar {
+
+  text-align: center;
 }
 
 h1 {
@@ -30,58 +34,65 @@ a .linkx:hover {
 
 .pradio {
   text-align: center;
-  font-family: "Ubuntu", sans-serif;
 }
 
-pre {
-  background-color: #252c31;
-    width: 60%;
+
+.pradio input[type="radio"] {
+  display: none;
+}
+
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textareaWrap {
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+}
+
+textarea#texto {
+  background-color: #252e31;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(41, 92, 92);
+  color: antiquewhite;
+  padding: 1.3em;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 87%;
+}
+
+#pre1 {
+  background-color: #252e31;
+    width: 70%;
+    font-family: 'Courier New', Courier, monospace;
     margin-left: auto;
     margin-right: auto;
+    color: antiquewhite;
+    padding-left: 1.3em;
     border: solid;
     border-width: 1px;
     border-color: rgb(41, 92, 92);
-    color: antiquewhite;
     padding: 1.3em;
-  }
+}
 
-  #code1 {
-    font-size: 105%;
-    line-height: 160%;
-    border-bottom: none;
-  }
+.dot {
+  color: #252b31;
+}
 
-  #code2 {
-    color: antiquewhite;
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
-  }
 
-  pre#code2 {
-    border: none;
-    background-color: inherit;
-  }
-  
-  textarea {
-    background-color: #252e31;
-    border: solid;
-    border-width: 1px;
-    border-color: rgb(41, 92, 92);
-    color: antiquewhite;
-    padding: 1.3em;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .textoInst {
+.textoInst {
     color: antiquewhite;
     padding: 1.3em;
     margin-right: auto;
     margin-left: auto;
     width: 65%;
-    font-family: "Ubuntu", sans-serif;
     line-height: 1.6;
     text-align: justify;
 }
@@ -95,28 +106,15 @@ pre {
     width: 60%;
 }
 
-  #textareaWrap {
-    margin-right: auto;
-    margin-left: auto;
-    width: 70%;
-  }
 
 .hide {
 display: none ;
+
 }
 
-  
-  form {
-    width: 100%;
 
-  }
   
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    font-style: ubuntu;
-  }
+
   
   
   .vdev  { color: #cc33ff}
@@ -128,6 +126,7 @@ display: none ;
   .biii  { color: rgba(245, 66, 12, 0.733) }
   .vmin  { color: rgba(245, 66, 12, 0.733) }
   .vimin  { color: rgba(245, 66, 12, 0.733) }
+  .punto  { color: black }
 
   .magentaDom{
     color: #cc33ff !important;
@@ -146,4 +145,6 @@ display: none ;
     color: antiquewhite;
     padding: 5px;
     border-radius: 1%;
+    border-radius: 3px;
   }
+

@@ -1,135 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones Armonicas</title>
 
 <link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.solar.css">
 </head>
 <body>
+  <br>
 
-<div class="container">
+  <h1>Marcador de Funciones Armonicas para Tablaturas</h1>
+</nav>
 
-<h1>Marcador de Funciones Armonicas para Tablaturas</h1>
-
-<br />
-  
-<form class="formulario" id="formulario" action="tab.html" method="POST">
+  <div class="container">
+    
+<br>
 
 <p class="pradio">
-<label for="C"><input type="radio" name="clave" class="clave" value="C" id="C" required> Clave de Do (C)</label> 
-<label for="D"><input type="radio" name="clave" class="clave" value="D" id="D"> Clave de Re (D)</label> 
-<label for="E"><input type="radio" name="clave" class="clave" value="E" id="E"> Clave de Mi (E)</label> 
-<label for="F"><input type="radio" name="clave" class="clave" value="F" id="F"> Clave de Fa (F)</label> 
+<label for="C"><input type="radio" name="clave" class="clave" value="C" id="C" required>Do (C)</label> 
+<label for="D"><input type="radio" name="clave" class="clave" value="D" id="D">Re (D)</label> 
+<label for="E"><input type="radio" name="clave" class="clave" value="E" id="E">Mi (E)</label> 
+<label for="F"><input type="radio" name="clave" class="clave" value="F" id="F">Fa (F)</label> 
 </p>
 
 <p class="pradio">
-<label for="G"><input type="radio" name="clave" class="clave" value="G" id="G"> Clave de Sol (G)</label> 
-<label for="A"><input type="radio" name="clave" class="clave" value="A" id="A"> Clave de La (A)</label> 
-<label for="B"><input type="radio" name="clave" class="clave" value="B" id="B"> Clave de Si (B)</label> 
+<label for="G"><input type="radio" name="clave" class="clave" value="G" id="G">Sol (G)</label> 
+<label for="A"><input type="radio" name="clave" class="clave" value="A" id="A">La (A)</label> 
+<label for="B"><input type="radio" name="clave" class="clave" value="B" id="B">Si (B)</label> 
 </p>
-<br />
 
-<center><button type="submit" onclick="enviar()" id="botonPosta" >Convertir</button></center>
-<br />
-    <div id="textareaWrap">
-    <textarea id="texto" name="texto" rows="30" cols="45"></textarea>
-    </div>  
-  
-  </form>
+
+  <label for="button"><button id="reset" ></button></label> 
+
+
+    <div class="textareaWrap">
+    <textarea id="texto" name="texto" rows="10" cols="45"  required></textarea>
+    
+    </div>
+
+    <pre id="pre1"><code><span id="display"></span></code></pre>
+
+    <pre id="pre2">
+        <span id="claveC" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            C  /   /Dm /   /Em /F  /   /G  /   /Am /   /Bº /C</span><span id="claveD" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            D  /   /Em /   /F#m/G  /   /A  /   /Bm /   /C#º/D</span><span id="claveE" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            E  /   /F#m/   /G#m/A  /   /B  /   /C#m/   /D#º/E</span><span id="claveF" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            F  /   /Gm /   /Am /Bb /   /C  /   /Dm /   /Eº /F</span><span id="claveG" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            G  /   /Am /   /Bm /C  /   /D  /   /Em /   /F#º/G</span><span id="claveA" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            A  /   /Bm /   /C#m/D  /   /E  /   /F#m/   /G#º/A</span><span id="claveB" class="hide hideHd">    I       ii      iii IV      V       vi      VII I
+            B  /   /C#m/   /D#m/E  /   /F# /   /G#m/   /A#º/B</span>
+            
+    <span id="claveCNon" class="hide hideHd"><span class="rojo">Bb</span> o <span class="rojo">A#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">G#</span> o <span class="rojo">Ab</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">E</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Gm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Fm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">C7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">D</span> o <span class="magentaDom">D7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">E</span> o <span class="magentaDom">E7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">A</span> o <span class="magentaDom">A7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveDNon" class="hide hideHd"><span class="rojo">C</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">Bb</span> o <span class="rojo">A#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">F</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Am</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Gm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">D7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">E</span> o <span class="magentaDom">E7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">F#</span> o <span class="magentaDom">F#7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">B</span> o <span class="magentaDom">B7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveENon" class="hide hideHd"><span class="rojo">D</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">C</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">G</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Bm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Am</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">E7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">F#</span> o <span class="magentaDom">F#7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">G#</span> o <span class="magentaDom">G#7</span>: <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">C#</span> o <span class="magentaDom">C#7</span>: <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveFNon" class="hide hideHd"><span class="rojo">Eb</span> o <span class="rojo">D#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">C</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">G</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Cm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Bbm</span> o <span class="rojo">A#m</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">F7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">G</span> o <span class="magentaDom">G7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">A</span> o <span class="magentaDom">A7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">D</span> o <span class="magentaDom">D7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveGNon" class="hide hideHd"><span class="rojo">F</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">Eb</span> o <span class="rojo">D#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">Bb</span> o <span class="rojo">A#</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Dm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Cm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">G7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">A</span> o <span class="magentaDom">A7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">B7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">E</span> o <span class="magentaDom">E7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveANon" class="hide hideHd"><span class="rojo">G</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">F</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">C</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">Em</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Dm</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">A7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">B</span> o <span class="magentaDom">B7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">C#</span> o <span class="magentaDom">C#7</span>:  <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">F#</span> o <span class="magentaDom">F#7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span><span id="claveBNon" class="hide hideHd"><span class="rojo">A</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">bVII prestado del modo paralelo menor</a>
+    <span class="rojo">G</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-acorde-bvi-prestado" target="_blank">bVI prestado del modo paralelo menor</a>
+    <span class="rojo">D</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">bIII prestado del modo paralelo menor</a>
+    <span class="rojo">F#m</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-i-y-v-i-v-menor" target="_blank">v prestado del modo paralelo menor</a>
+    <span class="rojo">Em</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-cliché-iv-iv-iv-mayor-menor" target="_blank">iv prestado del modo paralelo menor</a>
+    <span class="magentaDom">B7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">VdeIV o Dominante de IV</a>
+    <span class="magentaDom">C#</span> o <span class="magentaDom">C#7 : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">VdeV o Dominante del Dominante</a>
+    <span class="magentaDom">D#</span> <span class="magentaDom">Eb</span> <span class="magentaDom">D#7</span> o <span class="magentaDom">Eb7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-del-relativo-menor-vdevi" target="_blank">Vdevi o Dominante del Relativo Menor</a>
+    <span class="magentaDom">G#</span> <span class="magentaDom">Ab</span> <span class="magentaDom">G#7</span> o <span class="magentaDom">Ab7</span> : <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Vdeii o Dominante del grado II</a>
+    </span></pre>
+
 
 </div>
 <br />
 
-<h1>Instrucciones</h1>
-<div class="textoInst">
-<p>
-Esta aplicación marca con coloreado sintáctico similar al de los editores de codigo de programación los grados o funciones de cada acorde en una tablatura de acuerdo a la clave 
-que se le asigna, para lo cual se debe pegar el texto de la misma en el cuadro superior.
-</p>
-
-<p>
-Para entender el concepto de clave recomiendo el siguiente link 
-<a href="https://candidato-de-manchuria.netlify.app/armonia/arm3/#biii" target="_blank">La Clave: Acordes sobre los Grados de la Escala</a>. 
-</p>
-
-<p>Los acordes propios de la clave (usualmente conocidos como "diatonicos") no iran marcados con ningún
-color, pero sí se marcaran los que no sean completamente naturales de la clave (usualmente conocidos como "no-diatonicos"
-y que generalmente caen en las categorias de <a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#acordes-prestados-del-modo-paralelo" target="_blank">Acordes Prestados del Modo Paralelo</a> y
-<a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-vdev-y-el-turnaround-con-dominantes-secundarios" target="_blank">Dominantes Secundarios</a>)
-si serán marcados con un color y mas abajo se lo asociará a un link que explicará en más detalle la función de dicho acorde.
-</p>
-
-<p>
-Sin embargo debe tenerse en cuenta que a menudo las canciones cambian de clave, 
-a esto tecnicamente se lo conoce como <i>"modulación"</i> en dichos casos se deben convertir por separado 
-las partes de cada canción que estan en diferentes claves. Acá va una lista de las modulaciones más comunes:
-</p>
-
-
-<p>
-    <ul>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#dominante-de-iv" target="_blank">Modulación al Grado IV atravez de VdeIV</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#modulación-ii-v-i-al-grado-iv" target="_blank">Modulación al Grado IV atravez de ii-V-I</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#el-grado-ii-y-su-modulaciones" target="_blank">Modulación al Grado ii</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#modulación-de-semitono-o-tono-completo" target="_blank">Modulación de un Semitono y de un Tono Completo</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#modulación-entre-claves-mayores-a-un-intervalo-de-tercera-menor" target="_blank">Modulación entre Claves Mayores a un intervalo de Tercera Menor</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#bvii-prestado-refuncionalizado-como-iv" target="_blank">bVII Prestado Refuncionalizado como IV</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm1#claves-relativas" target="_blank">Modulación entre Claves Relativas</a></li>
-    <li><a href="https://candidato-de-manchuria.netlify.app/armonia/arm3#el-modo-paralelo-cómo-cambio-de-clave" target="_blank">Modulación entre Claves Paralelas</a></li>     
-    </ul>
-</p>
-
-<p>
-Sobre estos dos últimos casos, por ser modulaciones entre una clave mayor y una clave menor se debe tener en
-cuenta que la aplicación aún no convierte claves menores.
-</p>
-
-<p>Para casos que no cuadren dentro de los casos indicados más arriba recomiendo revisar el
-concepto de <a href="https://candidato-de-manchuria.netlify.app/armonia/arm2#ambigüedad-tonal" target="_blank">Ambigüedad Tonal</a>.
-</p>
-
-
-</p>
-
-</div>
 
 </body>
+<script src="https://unpkg.com/custom-syntax-highlighter@latest/bin/index.js"></script>
+
+<script>
+    var highlight = window.csHighlight;
+</script>
 
 <script type="text/javascript">
 
-function radioValue() {
+// todas las funciones estan directa o indirectamente ejecutadas submit()
+// Los RadioButtons estan estilados para parecer simples botones
+var radioButtons = document.getElementsByName('clave');
 
-        let ele = document.getElementsByName('clave');
-
-        for (i = 0; i < ele.length; i++) {
-            if (ele[i].checked) {
-               sessionStorage.setItem("valorRadioBtn", ele[i].value);
-            }
-        }
-
-}
-
-function enviar() {
-    let textoVal = document.querySelector('#texto').value;
-    localStorage.setItem("itemTextArea", textoVal);
-    radioValue();
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Assuming all radio buttons share the same name attribute
-    const radioButtons = document.getElementsByName('clave');
-
-    for(let radioButton of radioButtons) {
-        radioButton.addEventListener('click', function() {
-            document.querySelector('#botonPosta').click();
+for(var radioButton of radioButtons) {
+        radioButton.addEventListener('click', function(e) {
+            ValidateTextBox()
+            localStorage.setItem("claveValue", e.target.value);
+            labelBack();
+            document.querySelector(`label[for="${e.target.value}"]`).style.backgroundColor = '#422e31';
+            setTexto();            
+            displayElem();
         });
     }
-});
+
+//checkea que el areabox no este vacio
+function ValidateTextBox() {
+        if (document.getElementById("texto").value.trim() == "") {
+            alert("Please enter Name!");
+            return
+        }
+    };
+
+// funcion labelBack resetea (color estandard) labels de claves anteriores
+// ejecutada desde directamente desde los radioButtons
+var labelAll = document.querySelectorAll('label');
+
+var labelBack = () => {
+    labelAll.forEach(label => {
+      label.style.backgroundColor = '#252e31';
+    });    
+}
+
+//fn display() mete el texto dentro del box de display
+var display = document.getElementById("display");
+
+function setTexto() {
+
+display.innerHTML = document.querySelector('#texto').value;
+var xx = '<span class="dot">.</span>';
+var lines = display.innerHTML.split(/\r?\n/);
+var newContent = lines.map(function(line) {
+    return `${xx} ${line}`;
+}).join('<br>');
+
+display.innerHTML = newContent;
+}
+
+// funcion hideElemsFn() resetea (esconde) claves q displayElem() hizo visibles
+// ejecutada desde la funcion displayElem()
+var hideElems = document.querySelectorAll('.hideHd');
+
+var hideElemsFn = () => {
+    hideElems.forEach(elem => {
+        elem.classList.add('hide')
+    });
+}
+
+
+
+
+// funcion displayElem() define visibilidad dependiendo de la clave seleccionada
+// ejecutada desde directamente desde los radioButtons
+// ejecuta a su vez hideElemsFn() para esconder las anteriores
+var displayElem = () => {
+
+hideElemsFn();
+
+var opcion = localStorage.getItem("claveValue");
+
+if (opcion ===  "A") {
+
+document.getElementById('claveA').classList.remove('hide');
+document.getElementById('claveANon').classList.remove('hide');
+
+highlight({
+
+  patterns: [
+    {
+      name: 'vmin',
+      match: /^(Em\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Dm\s)/
+    },
+
+    {
+      name: 'vdeiv',
+      match: /^(A7)/
+    }, 
+
+    {
+      name: 'vdev',
+      match: /^(B7)/
+    },
+
+    {
+      name: 'vdev',
+      match: /^(B\s)/
+    },
+
+    {
+      name: 'vdeii',
+      match: /^(F#7)/
+    },
+
+    {
+      name: 'vdeii',
+      match: /^(Gb7)/
+    },
+
+    {
+      name: 'vdeii',
+      match: /^(F#\s)/
+    },
+
+    {
+      name: 'vdeii',
+      match: /^(Gb)/
+    },
+
+    {
+      name: 'vdevi',
+      match: /^(C#7)/
+    },
+
+    {
+      name: 'vdevi',
+      match: /^(Db7)/
+    },
+
+    {
+      name: 'vdevi',
+      match: /^(C#\s)/
+    },
+
+    {
+      name: 'vdevi',
+      match: /^(Db)/
+    },
+
+    {
+      name: 'bvii',
+      match: /^(G\s)/
+    },
+
+    {
+      name: 'bvi',
+      match: /^(F\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(C\s)/
+    }
+  ]
+
+})
+
+} else if (opcion ===  "B") {
+
+document.getElementById('claveB').classList.remove('hide');
+document.getElementById('claveBNon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+   {
+      name: 'vmin',
+      match: /^(F#m\s)/
+    }, 
+
+    {
+      name: 'vmin',
+      match: /^(Gbm\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Em\s)/
+    },
+
+  {
+    name: 'vdeiv',
+    match: /^(B7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(C#7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(Db7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(C#\s)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(Db)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(G#7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(Ab7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(G#\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(Ab\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(D#7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Eb7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(D#\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Eb\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(A\s)/
+  },
+
+    {
+      name: 'bvi',
+      match: /^(G\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(D\s)/
+    }
+]
+})
+
+} else if (opcion ===  "C") {
+
+document.getElementById('claveC').classList.remove('hide');
+document.getElementById('claveCNon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+    {
+      name: 'vmin',
+      match: /^(Gm\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Fm\s)/
+    },
+  {
+    name: 'vdeiv',
+    match: /^(C7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(D7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(D\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(A7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(A\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(E7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(E\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(Bb\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(A#\s)/
+  },
+
+{
+      name: 'bvi',
+      match: /^(G#\s)/
+    },
+
+    {
+      name: 'bvi',
+      match: /^(Ab\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(D#\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(Eb\s)/
+    }
+]
+})
+
+} else if (opcion ===  "D") {
+
+document.getElementById('claveD').classList.remove('hide');
+document.getElementById('claveDNon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+  {
+      name: 'vmin',
+      match: /^(Am\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Gm\s)/
+    },
+  {
+    name: 'vdeiv',
+    match: /^(D7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(E7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(E\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(B7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(B\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(F#7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Gb7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(F#\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Gb\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(C\s)/
+  },
+
+    {
+      name: 'bvi',
+      match: /^(Bb\s)/
+    },
+
+    {
+      name: 'bvi',
+      match: /^(A#\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(F\s)/
+    }
+]
+})
+
+} else if (opcion ===  "E") {
+
+document.getElementById('claveE').classList.remove('hide');
+document.getElementById('claveENon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+    {
+      name: 'vmin',
+      match: /^(Bm\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Am\s)/
+    },
+  {
+    name: 'vdeiv',
+    match: /^(E7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(F#7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(Gb7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(F#\s)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(Gb)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(C#7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(Db7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(C#\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(Db\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(G#7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(G#\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Ab7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(Ab\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(D\s)/
+  },
+
+    {
+      name: 'bvi',
+      match: /^(C\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(G\s)/
+    }
+]
+})
+
+} else if (opcion ===  "F") {
+
+document.getElementById('claveF').classList.remove('hide');
+document.getElementById('claveFNon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+  {
+      name: 'vmin',
+      match: /^(Cm\s)/
+    }, 
+
+    {
+      name: 'vimin',
+      match: /^(Bbm\s)/
+    },
+
+    {
+      name: 'vimin',
+      match: /^(A#m\s)/
+    },
+
+  {
+    name: 'vdeiv',
+    match: /^(F7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(G7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(G\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(D7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(D\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(A7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(A\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(Eb\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(D#\s)/
+  },
+
+    {
+      name: 'bvi',
+      match: /^(C#\s)/
+    },
+
+    {
+      name: 'bvi',
+      match: /^(Db\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(G#\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(Ab\s)/
+    }
+]
+})
+
+} else if (opcion ===  "G") {
+
+document.getElementById('claveG').classList.remove('hide');
+document.getElementById('claveGNon').classList.remove('hide');
+
+highlight({
+
+patterns: [
+
+  {
+    name: 'vmin',
+    match: /^(Dm\s)/
+  }, 
+
+  {
+    name: 'vimin',
+    match: /^(Cm\s)/
+  },
+
+  {
+    name: 'vdeiv',
+    match: /^(G7)/
+  }, 
+
+  {
+    name: 'vdev',
+    match: /^(A7)/
+  },
+
+  {
+    name: 'vdev',
+    match: /^(A\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(E7\s)/
+  },
+
+  {
+    name: 'vdeii',
+    match: /^(E\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(B7\s)/
+  },
+
+  {
+    name: 'vdevi',
+    match: /^(B\s)/
+  },
+
+  {
+      name: 'bvii',
+      match: /^(F\s)/
+  },
+
+    {
+      name: 'bvi',
+      match: /^(Eb\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(Bb\s)/
+    },
+
+    {
+      name: 'biii',
+      match: /^(A#\s)/
+    }
+]
+})
+
+}
+
+
+}  
 
 </script>
 
-
 </html>
+
